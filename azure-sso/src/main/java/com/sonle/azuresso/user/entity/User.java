@@ -1,9 +1,12 @@
-package com.sonle.azuresso.security.entity;
+package com.sonle.azuresso.user.entity;
+
+import com.sonle.azuresso.user.domain.UserRole;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "user", schema = "public")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +22,13 @@ public class User {
 
     public User(Long id, String username, String email, String password, List<UserRole> userRoles) {
         this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.userRoles = userRoles;
+    }
+
+    public User(String username, String email, String password, List<UserRole> userRoles) {
         this.username = username;
         this.email = email;
         this.password = password;

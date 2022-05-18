@@ -1,14 +1,16 @@
-package com.sonle.azuresso.security.jwt;
+package com.sonle.azuresso.security.config;
 
+import com.sonle.azuresso.security.jwt.JwtTokenFilter;
+import com.sonle.azuresso.security.jwt.JwtTokenProvider;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-public class JwtTokenFilterConfiguration extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
+public class JwtTokenFilterConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
     private final JwtTokenProvider jwtTokenProvider;
 
-    public JwtTokenFilterConfiguration(JwtTokenProvider jwtTokenProvider) {
+    public JwtTokenFilterConfig(JwtTokenProvider jwtTokenProvider) {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 

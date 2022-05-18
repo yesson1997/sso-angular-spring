@@ -1,10 +1,7 @@
-package com.sonle.azuresso.user.entity;
+package com.sonle.azuresso.user.domain;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import javax.persistence.Entity;
-
-@Entity
 public enum UserRole implements GrantedAuthority {
     ROLE_ADMIN, ROLE_CLIENT;
 

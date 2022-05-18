@@ -4,15 +4,15 @@ import com.sonle.azuresso.user.domain.UserRole;
 
 import java.util.List;
 
-public class ResponseUser {
+public class PublicUser {
     private String username;
     private String email;
     private List<UserRole> userRoles;
 
-    public ResponseUser() {
+    public PublicUser() {
     }
 
-    public ResponseUser(String username, String email, List<UserRole> userRoles) {
+    public PublicUser(String username, String email, List<UserRole> userRoles) {
         this.username = username;
         this.email = email;
         this.userRoles = userRoles;

@@ -1,1 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${APP_DATABASE_URL:jdbc:postgresql://localhost:5432/sso}
+    username: ${APP_DATABASE_USERNAME:}
+    password: ${APP_DATABASE_PASSWORD:}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      show-sql: true
+#      ddl-auto: update
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY:verySecretKey1}
+  expire-length: 7200000
+sso:
+    azure:
+      client-id: ${SSO_AZURE_CLIENT_ID:}
+      secret-id: ${SSO_AZURE_SECRET_ID:}
+      auth-url: ${SSO_AZURE_AUTH_URL:https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize}
+      token-url: ${SSO_AZURE_TOKEN_URL:https://login.microsoftonline.com/consumers/oauth2/v2.0/token}
+      resource-url: ${SSO_AZURE_RESOURCE_URL:https://graph.microsoft.com/v1.0/me}
+      backend-redirect-url: ${SSO_REDIRECT_URL:http://localhost:8080/api/users/callback}
+      frontend-redirect-url: ${SSO_REDIRECT_URL:http://localhost:4200/sso/redirect}
+
+
 
