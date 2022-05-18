@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+    <div>
+        <input type="text" formControlName="username" placeholder="Username" />
+    </div>
+    <div>
+        <div>
+            <input formControlName="password" type="password" placeholder="Password" />
+        </div>
+    </div>
+    <div>
+        <button (click)="onLogin()">Sign in</button>
+        <br>
+        <button (click)="onSSOLogin()">Sign in with Microsoft</button>
+    </div>
+</form>
